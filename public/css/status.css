@@ -1,0 +1,49 @@
+h2{
+    text-align: center;
+    margin: 8px;
+}
+.container1{
+    width: 50%;
+    margin: 20px auto;
+}
+
+.forminputs{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input#submit{
+    padding: 21px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 22px;
+    color:white;
+    font-size: 16px;
+    margin: 21px auto;
+    display: block;
+}
+.container{
+    width: auto;
+    height: 100%;
+    padding: 22px 33px;
+    background-color: #E0E0E0;
+    border-radius:5px;
+    line-height: 30px;
+}
+#userdet{
+    text-align: center;
+}
+#notfound{
+    text-align: center;
+}
+.result{
+    margin: 17px auto;
+    width: fit-content;
+    border: solid 1px #4daf7c;
+    padding: 12px;
+    border-radius: 5px;
+    background-color:lightgreen;
+}

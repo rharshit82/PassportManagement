@@ -1,0 +1,39 @@
+*{
+    padding:0px;
+    margin: 0px;
+}
+div.cont{
+    width:100%;
+    align-content: center;
+    text-align: center;
+}
+.pagetitle{
+    text-align: center;
+    margin: 2px auto;
+}
+.loginbuttons{
+    text-decoration: none ;
+}
+p{
+    line-height: 1.5rem;
+}
+td{
+    padding: 3px;
+}
+button{
+    margin: 21px;
+    padding: 21px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 22px;
+    color:white;
+    display: inline-block;
+    font-size: 16px;
+}
+button a{
+    color: white;
+}
+button:hover{
+    background-color: lightgreen;
+    cursor: pointer;
+}

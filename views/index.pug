@@ -1,0 +1,25 @@
+extends layouts/main-layout.pug
+block head
+    link(rel='stylesheet' type='text/css' href='/css/index.css')
+block content
+    div.cont
+        h2.pagetitle Passport Status Tracking System
+        p This project provides a clear Passport status tracking for the end users. It provides a single user interface for both the administrators and also the passport officer. 
+        p Users can apply for passport via passport application. We allow easy tracking of the passport as well. 
+        p Passport officers can handle the passport applications with ease.
+        table(style='width:100%')
+            tr
+                td 
+                    button(type='button')
+                        a(href="/user",class="loginbuttons") User Login
+                td 
+                    button(type='button')
+                        a(href="/officer",class="loginbuttons") Officer Login
+            tr
+                td Login as a passport officer to handle applications.
+                td Login as a user to apply and track passport.
+   
+       
+            
+
+

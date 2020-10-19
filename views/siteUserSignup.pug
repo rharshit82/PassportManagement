@@ -1,0 +1,86 @@
+extends layouts/main-layout.pug
+block head
+    link(rel='stylesheet' type='text/css' href='/css/siteUserSignup.css')
+block content
+    div.cont
+        h2.pagetitle User Signup
+        br
+        br
+        if data
+                h3#confirm= data.text
+        br
+        form(action='/signup' method='post')
+            p All the fields are required
+            br 
+            label(for='name') Name:
+            input.forminput#name(type='text' name='name', placeholder="Your Name..")
+            br
+            br
+            label(for='email') Email:
+            input.forminput#email(type='text' name='email',placeholder="example@example.com")
+            br
+            br
+            label(for='password') Password:
+            input.forminput#password(type='password' name='password',placeholder="Enter your Password.")
+            br
+            br
+            label(for='confirmPassword') Confirm Password:
+            input.forminput#confirmpassword(type='password' name='confirmPassword',placeholder="Confirm your Password.")
+            br
+            br
+            label(for='dob') Date of Birth:
+            input.forminput#dob(type='date' name='dob', placeholder="Your DOB..")
+            br
+            br
+            label(for='gender') Gender:
+            select.forminput#gender(name='gender')
+                option(value='0') Male
+                option(value='1') Female
+            br
+            br
+            label(for='district') District:
+            input.forminput#district(type='text', name='district', placeholder="Your District..")
+            br
+            br
+            label(for='state') State:
+            select.forminput#state(name='state', placeholder="Your State..")
+                option(value='Andhra Pradesh') Andhra Pradesh
+                option(value='Andaman and Nicobar Islands') Andaman and Nicobar Islands
+                option(value='Arunachal Pradesh') Arunachal Pradesh
+                option(value='Assam') Assam
+                option(value='Bihar') Bihar
+                option(value='Chandigarh') Chandigarh
+                option(value='Chhattisgarh') Chhattisgarh
+                option(value='Dadar and Nagar Haveli') Dadar and Nagar Haveli
+                option(value='Daman and Diu') Daman and Diu
+                option(value='Delhi') Delhi
+                option(value='Lakshadweep') Lakshadweep
+                option(value='Puducherry') Puducherry
+                option(value='Goa') Goa
+                option(value='Gujarat') Gujarat
+                option(value='Haryana') Haryana
+                option(value='Himachal Pradesh') Himachal Pradesh
+                option(value='Jammu and Kashmir') Jammu and Kashmir
+                option(value='Jharkhand') Jharkhand
+                option(value='Karnataka') Karnataka
+                option(value='Kerala') Kerala
+                option(value='Madhya Pradesh') Madhya Pradesh
+                option(value='Maharashtra') Maharashtra
+                option(value='Manipur') Manipur
+                option(value='Meghalaya') Meghalaya
+                option(value='Mizoram') Mizoram
+                option(value='Nagaland') Nagaland
+                option(value='Odisha') Odisha
+                option(value='Punjab') Punjab
+                option(value='Rajasthan') Rajasthan
+                option(value='Sikkim') Sikkim
+                option(value='Tamil Nadu') Tamil Nadu
+                option(value='Telangana') Telangana
+                option(value='Tripura') Tripura
+                option(value='Uttar Pradesh') Uttar Pradesh
+                option(value='Uttarakhand') Uttarakhand
+                option(value='West Bengal') West Bengal
+            br
+            br
+            input#user(type='submit' value='Submit')
+            

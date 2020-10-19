@@ -1,0 +1,55 @@
+doctype html
+<html lang="en">
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel="icon" href="/images/logo.png")
+  link(rel='stylesheet' type='text/css' href='/css/main-layout.css')
+  block head  
+body
+  block nav
+    nav.main-nav
+      ul
+        a(href='/')
+          img(src='/images/logo.png' alt='Logo')
+        li#title
+          a(class="main-title",href='/')
+            h1 Passport Seva
+        li.items
+          a(class="navitems",href='/userlogin') User Login
+        li.items
+          a(class="navitems",href='/officerlogin') Officer Login
+        li.items
+          a(class="navitems",href='/status') Track Status
+        li.items
+          a(class="navitems",href='/signup') Sign up
+        li.items
+          a(class="navitems",href='/logout') Logout
+  block content
+  
+
+  footer
+    block footer
+    .footer-sec
+      .col1
+        h4
+          | Passport Seva
+        p
+          | Passport Seva is a Passport Status Tracking System that makes applying and status tracking of passport hassle free for users.
+          | Officers can handle the passport forms with ease and send it for further processing.
+      .col2
+        h4
+          | Objectives
+        p
+          | To make Applying of Passport Easy for users
+          | To make Tracking of Passport Application simple
+          | To make handling of Passport Applications and Apply it further easy for Passport Officer 
+      .col3
+        h4
+          | Features
+        p 1. Users can Apply for Passport and also Track their application
+        p 2. Separate Login Page for Users and Passport Officer
+        p 3. Passport Officer can update the status of Application
+          
+    .footer-last &copy; 2020 PassportSeva
+

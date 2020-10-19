@@ -1,0 +1,37 @@
+extends layouts/main-layout.pug
+block head
+    link(rel='stylesheet' type='text/css' href='/css/admindashboard.css')
+block content
+    div.cont
+        h2.pagetitle Create Officer Account
+        br
+        if data
+                h3#confirm= data.text
+        br
+        form(action='/admindashboard' method='post')
+            p All the fields are required
+            br 
+            label(for='name') Name:
+            input.forminput#name(type='text' name='name', placeholder="Name..")
+            br
+            br
+            label(for='email') Email:
+            input.forminput#email(type='text' name='email',placeholder="example@example.com")
+            br
+            br
+            label(for='password') Password:
+            input.forminput#password(type='password' name='password', placeholder="Enter Password")
+            br
+            br
+            label(for='confirmPassword') Confirm Password:
+            input.forminput#confirmPassword(type='password' name='confirmPassword', placeholder="Enter Password Again")
+            br
+            br
+            label(for='gender') Gender:
+            select.forminput#gender(name='gender')
+                option(value='0') Male
+                option(value='1') Female
+            br
+            br
+            input#user(type='submit' value='Submit')
+            

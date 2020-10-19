@@ -1,0 +1,43 @@
+extends layouts/main-layout.pug
+block head
+    link(rel="stylesheet", href="/css/status.css")
+    
+
+
+block content
+    
+    if notFound
+        p#notfound="User Not Found"
+    h2 Track Passport Status
+    div.container1
+        p Enter your Name, Email and Aadhar to track the status of your Passport
+        br
+        br
+        form(action='/status', method='post')
+            label(for="Name") Enter your Name 
+            input(type="text", name= "Name", placeholder="Your Name..", class="forminputs")
+            br
+            br
+            label(for="Email") Enter your Email 
+            input(type="text", name= "Email", placeholder="Your Email..", class="forminputs")
+            br
+            br
+            label(for="Aadhar") Enter your Aadhar ID 
+            input(type="text", name= "Aadhar", placeholder="Your Aadhar ID..", class="forminputs")
+            br
+            br
+            input#submit(type='submit' value='Track Status')
+        if data!=null
+            .container
+                h3#userdet User Details
+                p="Name:    "+data.Name
+                p="Email:   "+data.email
+                p="District: "+data.District
+                .result
+                    if(data.Status)
+                        p="Passport is Verified"
+                    else
+                        p="Passport is Still in Process"
+        script(src="/js/status.js")
+                
+        

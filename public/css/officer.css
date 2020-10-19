@@ -1,0 +1,39 @@
+.pagetitle{
+    text-align: center;
+    margin: 10px auto;
+}
+.eachuser{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 5px solid lightslategrey;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgb(221,255,255);
+}
+#formno{
+    text-align: center;
+}
+input{
+    
+    padding: 21px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 22px;
+    color:white;
+    display: block;
+    font-size: 16px;
+    margin: 15px auto;
+}
+
+input:hover{
+    background-color: lightgreen;
+    cursor: pointer;
+}
+#nopassport{
+    margin: 30px auto;
+    display: block;
+    width: fit-content;
+    font-size: 1.3rem;
+}

@@ -1,0 +1,43 @@
+extends layouts/main-layout.pug
+block head
+    link(rel='stylesheet' type='text/css' href='/css/officer.css')
+    
+block content
+    div.cont
+        h2.pagetitle Welcome Officer
+        if details
+            - var n=1
+            each val in details
+                div.eachuser
+                    h2#formno= 'Form '+ n++
+                    h3= 'Name: '+ val.Name 
+                    br
+                    p= 'Email: '+ val.email
+                    br
+                    p= 'Date of Birth: '+ val.DOB
+                    br
+                    if val.Gender
+                        p= 'Gender: Female'
+                    else
+                        p= 'Gender: Male'
+                    br
+                    p='District: ' + val.District
+                    br
+                    p='State: ' + val.State
+                    br
+                    p='PAN No: '+ val.PANNo
+                    br
+                    p='Aadhar No: '+ val.Aadhar
+                    br
+                    if val.Status
+                        p= 'Status: Confirmed'
+                    else
+                        p= 'Status: Not Confirmed'
+                        <input type="button" value="Confirm" onclick="location.href = '/confirm/#{val.Aadhar}'">
+        else 
+            p#nopassport= "Not Passport Applications for now"
+            
+                
+                
+
+        
