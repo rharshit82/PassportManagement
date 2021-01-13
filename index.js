@@ -10,6 +10,7 @@ const userLogoutController = require('./controllers/userLogoutController')
 const officerLoginController = require('./controllers/officerLoginController')
 const officerSignupController = require('./controllers/officerSignupController')
 const adminLoginController = require('./controllers/adminLoginController')
+const contactController = require('./controllers/contactcontroller')
 const bodyParser = require('body-parser')
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
@@ -126,6 +127,11 @@ app.post('/admin', adminLoginController )
 app.get('/admindashboard', (req,res) => res.render('admindashboard.pug') )
 
 app.post('/admindashboard', officerSignupController )
+
+app.get('/contact', (req,res) => res.render('contact.pug'));
+
+app.post('/contact',contactController  );
+
 
 
 app.listen(port, () => {

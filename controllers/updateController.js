@@ -1,47 +1,42 @@
 const Users = require('../model')
 const nodemailer = require("nodemailer");
+const { getMaxListeners } = require('../model');
 
 module.exports = (req, res) => {
+    var email='rharshit82@gmail.com'; // default
     aadhar = parseInt(req.params.aadhar);
     const filter = { Aadhar: aadhar };
     const update = { Status: Boolean(true) };
-    Users.findOneAndUpdate(filter, update, () => {
+    Users.findOneAndUpdate(filter, update, (err,User) => {
         console.log("Done");
-    }).then(async function mailer() {
-        let testAccount = await nodemailer.createTestAccount()
-
-        let transporter = nodemailer.createTransport({
-            host: "smtp.ethereal.email",
-            port: 587,
-            secure: false, // true for 465, false for other ports
+        if(err){
+            console.log(err);
+        }
+        else{
+            email=User.email;
+        }
+    })
+    .then(function mailer() {
+        console.log(email)
+        var transport = nodemailer.createTransport({
+            service: "Gmail",
             auth: {
-              user: testAccount.user, // generated ethereal user
-              pass: testAccount.pass, // generated ethereal password
-            },
-            tls:{
-                rejectUnauthorized:false
-            }
-          });
-        console.log(testAccount.user)
-        var mailOptions = {
-            from: `${testAccount.user}`,
-            to: 'hampton.jencarlo@eerees.com',
-            subject: 'Sending Email using Node.js',
-            text: 'That was easy!',
-            html: "<b>That was easy!</b>"
-        };
-
-        transporter.sendMail(mailOptions, function (error, info) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log('Email sent: ' + info.response);
+                user: "bestorderin@gmail.com",
+                pass: "Passport123@"
             }
         });
-
-        // Preview only available when sending through an Ethereal account
-        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+        var mailOptions = {
+            from: '"BestOrder" <bestorderin@gmail.com>',
+            to: email,
+            subject: 'Application approved',
+            text: 'The application you submitted is succesfully approved'
+        };
+        transport.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message sent: %s', info.messageId);
+        });
     })
     console.log(filter, update)
     res.redirect('/officer')

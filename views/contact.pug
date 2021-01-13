@@ -1,0 +1,21 @@
+extends layouts/main-layout.pug
+block head
+    link(rel='stylesheet' type='text/css' href='/css/contact.css')
+block content
+    .content
+        if(success)
+            h3=success
+        form(action='/contact', method = 'post')
+            label(for='fname') Name :
+            br
+            input.forminput#name(type='text' name='name' placeholder='Enter your name')
+            br
+            label(for='email') Email:
+            br
+            input.forminput#email(type='text' name='email' placeholder='Enter your email')
+            br
+            label(for='query') Query:
+            br
+            textarea#query(type='text' name='query' placeholder='Describe your Query in minimum 100 words')
+            br
+            input#user(type='submit' value='Submit')

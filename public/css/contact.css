@@ -1,0 +1,47 @@
+.content{
+    text-align: center;
+    margin: 10px auto;
+}
+
+
+form{
+    margin: 0 auto;
+    width: 50%;
+}
+input{
+    margin-top: 3px;
+}
+input#user{
+
+    padding: 21px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 22px;
+    color:white;
+    /* display: inline-block; */
+    font-size: 16px;
+    margin: 21px auto;
+    display: block;
+
+}
+input#user:hover{
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+.forminput{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+#query{
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
